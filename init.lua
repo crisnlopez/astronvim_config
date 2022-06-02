@@ -29,21 +29,21 @@ local config = {
     end,
     plugins = { -- enable or disable extra plugin highlighting
       aerial = true,
-      beacon = false,
+      beacon = true, -- Default false
       bufferline = true,
       dashboard = true,
       highlighturl = true,
-      hop = false,
+      hop = true, -- Default false
       indent_blankline = true,
-      lightspeed = false,
+      lightspeed = true, -- Default false
       ["neo-tree"] = true,
       notify = true,
-      ["nvim-tree"] = false,
+      ["nvim-tree"] = true, -- Default false
       ["nvim-web-devicons"] = true,
       rainbow = true,
-      symbols_outline = false,
+      symbols_outline = true, -- Default false
       telescope = true,
-      vimwiki = false,
+      vimwiki = true, -- Default false
       ["which-key"] = true,
     },
   },
@@ -70,6 +70,21 @@ local config = {
       --     require("lsp_signature").setup()
       --   end,
       -- },
+      {
+        "mfussenegger/nvim-dap",
+      },
+      {
+        "leoluz/nvim-dap-go",
+        config = function()
+          require('dap-go').setup()
+        end
+      },
+      {
+        "rcarriga/nvim-dap-ui",
+        config = function()
+          require('dapui').setup()
+        end
+      }
     },
     -- All other entries override the setup() call for default plugins
     ["null-ls"] = function(config)
