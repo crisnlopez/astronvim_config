@@ -142,6 +142,13 @@ local config = {
         ["<leader>"] = {
           -- which-key registration table for normal mode, leader prefix
           -- ["N"] = { "<cmd>tabnew<cr>", "New Buffer" },
+          d = {
+            name = "dap",
+            O = {"<Cmd>lua require'dapui'.open()<CR>", "Open Dap-UI"},
+            C = {"<Cmd>lua require'dapui'.close()<CR>", "Close Dap-UI"},
+            c = {"<Cmd>lua require'dap'.continue()<CR>", "Continue"},
+            b = {"<Cmd>lua require'dap'.toggle_breakpoint()<CR>", "Toggle BreakPoint"}
+          }
         },
       },
     },
